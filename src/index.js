@@ -102,5 +102,45 @@ import{details,specification} from'./classes';
 console.log(details.hello());
 console.log(specification.hello());
 
+//writing Set
+let set = new Set();
+set.add(5);
+set.add(43);
+set.add("Hello");
+set.add({x: 50, y: 200}); 
+console.log(set);
+console.log(set.size);
+console.log(set.has(5));
 
+let chars= 'kjhkhkjnjbkjbk';
+let chars_arr=chars.split("");
+let chars_set= new Set(chars_arr);
+console.log(chars_set);
 
+//writing map
+let map = new Map();
+let key_1="string key";
+let key_2={a:'key'};
+let key_3= function(){};
+map.set(key_1,'return value for a string key');
+map.set(key_2,'return value for an object key');
+map.set(key_3,'return value for a function key');
+console.log(map);
+
+let numArr=[[1,'one'],[2,'two'],[3,'three']];
+let valmap= new Map(numArr);
+ for(let [key , value]of valmap.entries()){
+     console.log(`${key} points to ${value}`);
+ }
+
+ let str ='aaxaxaxaxxaccdkoojcsclm';
+  let letters = new Map();
+  for(let i=0; i<str.length;i++){
+      let letter=str[i];
+      if(!letters.has(letter)){
+          letters.set(letter,1);
+      }else{
+          letters.set(letter,letters.get(letter)+1);
+      }
+  }
+  console.log(letters);
